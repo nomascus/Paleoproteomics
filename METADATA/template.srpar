@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SrParams xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <MqParams>
+    <MqResultsDir>MQRESDIR</MqResultsDir>
+    <MqParFileName>MQPAR</MqParFileName>
+    <FastaFileDir>FASTAFILEPATH</FastaFileDir>
+    <ContFastaFile>/home/orkin/PROGRAMS/GrandPep_20210826_e2ef8487/bin/conf/contaminants.fasta</ContFastaFile>
+  </MqParams>
+  <DnParams>
+    <ScoreCutoff>10.449</ScoreCutoff>
+    <MaxComb>150</MaxComb>
+    <MinLength>7</MinLength>
+    <MinMappingPeptideLength>5</MinMappingPeptideLength>
+    <NumMisMatch>2</NumMisMatch>
+    <TolDa>0.01</TolDa>
+    <OnlyUnidentifiedSpectra>true</OnlyUnidentifiedSpectra>
+    <ExtDenovoDir />
+    <AdditionalMatching>false</AdditionalMatching>
+  </DnParams>
+  <DpParams>
+    <PosProb>0.5</PosProb>
+    <TolDa>0.01</TolDa>
+  </DpParams>
+  <GeneralParams>
+    <NumMisMatch>2</NumMisMatch>
+    <MinSeqOccurance>1</MinSeqOccurance>
+    <ExtAaLength>0</ExtAaLength>
+  </GeneralParams>
+  <SrResultsDir>SRRESDIR</SrResultsDir>
+  <NumProcess>1</NumProcess>
+</SrParams>

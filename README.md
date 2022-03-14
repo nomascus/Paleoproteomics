@@ -2,8 +2,7 @@
 
 ## 1) MQpar_autogen.pl
 
->	This script will generate mqpar files for MaxQuant using a template file, a metadata file, and a intiailization or validation command line switch
->	The template file includes several allcaps fields (FASTAFILEPATH FIXEDCOMBINEDFOLDER RAWFILE EXPERIMENT) that are replaced using info from the metadatafile and some hard coded paths below.
+>	This script will generate mqpar files for MaxQuant using a template file, a metadata file, and a intiailization or validation command line switch\n\nThe template file includes several allcaps fields (FASTAFILEPATH FIXEDCOMBINEDFOLDER RAWFILE EXPERIMENT) that are replaced using info from the metadatafile and some hard coded paths below.
 
 >	It will generate mqpar files from metadata file which has the format of sampleID runID rawfile fastaDBfile
 >       For example, the metadata should be something like:     Homo_sapiens    sample123       run456       MassSpec123456.raw      LemurDatabase.fasta

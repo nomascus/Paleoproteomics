@@ -6,8 +6,7 @@
 
 >	It will generate mqpar files from metadata file which has the format of sampleID runID rawfile fastaDBfile. For example, the metadata should be something like:     Homo_sapiens    sample123       run456       MassSpec123456.raw      LemurDatabase.fasta
 
->       For the initialiation tun, type: perl MQpar_autogen.pl INIT template_VAL_mqpar.xml metadata.txt
->       For the validation run type: perl MQpar_autogen.pl VAL template_VAL_mqpar.xml metadata.txt
+>       For the initialiation run, type: perl MQpar_INIT_autogen.pl template_INIT_mqpar.xml metadata.txt
 
 >	Be sure to hard code the directories in the "Set directories" section below
 
@@ -24,8 +23,8 @@
 
 ## 4)  MQpar_VAL_autogen.pl
 >	Same basic idea as  MQpar_INIT_autogen.pl, but includes the newly generated fasta files from the init runs. This can break if there if both peptide and protein fasta tables not output from prior runs. This script is a bit more experimental.  
-
-
+>       For the validation run type: perl MQpar_VAL_autogen.pl template_VAL_mqpar.xml metadata.txt
+	 
 ## Other scripts
 
 ## uniprot_parser.pl

@@ -1,6 +1,6 @@
 # Paleoproteomics
 
-## 1) MQpar_autogen.pl
+## 1) MQpar_INIT_autogen.pl
 
 >	This script will generate mqpar files for MaxQuant using a template file, a metadata file, and a intiailization or validation command line switch. The template file includes several allcaps fields (FASTAFILEPATH FIXEDCOMBINEDFOLDER RAWFILE EXPERIMENT) that are replaced using info from the metadatafile and some hard coded paths (see "Set directories" in the script).
 
@@ -20,7 +20,10 @@
 
 ## 3) SRpar_autogen.pl
 
->	Can break if there if both peptide and protein fasta tables not output from prior runs. This script is a bit more experimental.  
+>	Generates SRpar files as above. HOWEVER, you need to tell it whether you are doing an INIT or VAL run. For example perl SRpar_autogen.pl INIT template  metadata
+
+## 4)  MQpar_VAL_autogen.pl
+>	Same basic idea as  MQpar_INIT_autogen.pl, but includes the newly generated fasta files from the init runs. This can break if there if both peptide and protein fasta tables not output from prior runs. This script is a bit more experimental.  
 
 
 ## Other scripts

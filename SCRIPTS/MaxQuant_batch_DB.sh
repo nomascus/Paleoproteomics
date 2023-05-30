@@ -23,8 +23,10 @@ cat $2 | while read line; do
 	species=$(echo $line | perl -lane 'print $F[0]')
 	sample=$(echo $line | perl -lane 'print $F[1]')
 	BPP=$(echo $line | perl -lane 'print $F[2]')
-	MQpar="${species}_${sample}_${BPP}_${MQrun}_mqpar.xml"
-	folder=${species}_${sample}/${species}_${sample}_${BPP}/${species}_${sample}_${BPP}_$MQrun
+	DBID=$(echo $line | perl -lane 'print $F[5]')
+
+	MQpar="${species}_${sample}_${BPP}_${DBID}_${MQrun}_mqpar.xml"
+	folder=${species}_${sample}/${species}_${sample}_${BPP}/${species}_${sample}_${BPP}_${DBID}_$MQrun
 	
 	mkdir -p $indir/$folder
 	mkdir -p $indir/$folder/ERROR
@@ -32,19 +34,19 @@ cat $2 | while read line; do
 echo "#!/bin/bash
 
 #SBATCH --account=def-orkin
-#SBATCH --mail-user=joseph.orkin@upf.edu
+#SBATCH --mail-user=joseph.orkin@umontreal.ca
 #SBATCH --mail-type=ALL
-#SBATCH -J ${BPP}_MQ
+#SBATCH -J ${DBID}_${BPP}_MQ
 #SBATCH -D $indir/$folder
-#SBATCH -o $indir/$folder/ERROR/${species}_${sample}_${BPP}_${MQrun}-%j.out
-#SBATCH -e $indir/$folder/ERROR/${species}_${sample}_${BPP}_${MQrun}-%j.err
-#SBATCH --time=0-23:59:00
+#SBATCH -o $indir/$folder/ERROR/${species}_${sample}_${BPP}_${DBID}_${MQrun}-%j.out
+#SBATCH -e $indir/$folder/ERROR/${species}_${sample}_${BPP}_${DBID}_${MQrun}-%j.err
+#SBATCH --time=0-18:00:00
 #SBATCH --cpus-per-task=20
-#SBATCH --mem-per-cpu=2G
+#SBATCH --mem-per-cpu=4G
 
 export OMP_NUM_THREADS=\$SLURM_CPUS_PER_TASK
 
 module load dotnet-core/3.1.8
-dotnet /home/orkin/PROGRAMS/MaxQuant_2.0.3.1/bin/MaxQuantCmd.exe ${mqpardir}/$MQpar" > $comdir/${species}_${sample}_${BPP}_${MQrun}.sbatch
+dotnet /home/orkin/PROGRAMS/MaxQuant_2.0.3.1/bin/MaxQuantCmd.exe ${mqpardir}/$MQpar" > $comdir/${species}_${sample}_${BPP}_${DBID}_${MQrun}.sbatch
 
 done

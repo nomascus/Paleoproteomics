@@ -8,7 +8,7 @@
   </MqParams>
   <DnParams>
     <ScoreCutoff>10.449</ScoreCutoff>
-    <MaxComb>130</MaxComb>
+    <MaxComb>300</MaxComb>
     <MinLength>7</MinLength>
     <MinMappingPeptideLength>5</MinMappingPeptideLength>
     <NumMisMatch>2</NumMisMatch>

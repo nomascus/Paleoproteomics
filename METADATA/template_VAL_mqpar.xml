@@ -15,7 +15,7 @@
          <identifierParseRule>>([^\s]*)</identifierParseRule>
          <descriptionParseRule>>(.*)</descriptionParseRule>
          <taxonomyParseRule></taxonomyParseRule>
-         <variationParseRule>>[^\s]+\s+(.+)</variationParseRule>
+         <variationParseRule>>[^\s]+\s+(.+) </variationParseRule>
          <modificationParseRule></modificationParseRule>
          <taxonomyId></taxonomyId>
       </FastaFileInfo>

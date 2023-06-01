@@ -234,7 +234,6 @@
             <string>Gln->pyro-Glu</string>
             <string>Glu->pyro-Glu</string>
             <string>Phospho (ST)</string>
-            <string>Arg->Orn</string>
          </variableModifications>
          <useMultiModification>False</useMultiModification>
          <multiModifications>
